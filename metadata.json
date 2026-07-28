@@ -1,0 +1,6 @@
+{
+  "name": "ClipNest — K-Drama Scene Packs Directory",
+  "description": "High-quality K-Drama scene packs, 4K/60fps clips, search, category filters, download links, Monetag ad placements, and admin management panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
