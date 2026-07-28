@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "scenepacks": {
+      "title": "scenepacks",
+      "description": "K-Drama scene pack listings with media specs and download links",
+      "properties": {
+        "title": { "type": "string", "description": "Title of the scene pack clip" },
+        "dramaName": { "type": "string", "description": "Name of the K-Drama" },
+        "episode": { "type": "string", "description": "Episode or range e.g. Ep 01-16 or Ep 05" },
+        "quality": { "type": "string", "description": "1080p FHD, 4K UHD, 60FPS" },
+        "fps": { "type": "string", "description": "23.976fps, 60fps, 120fps" },
+        "codec": { "type": "string", "description": "x264, HEVC / H.265, ProRes, Log" },
+        "size": { "type": "string", "description": "File size e.g. 1.8 GB" },
+        "duration": { "type": "string", "description": "Clip duration e.g. 12m 45s" },
+        "coverUrl": { "type": "string", "description": "Image poster thumbnail URL" },
+        "videoPreviewUrl": { "type": "string", "description": "Video preview or loop URL" },
+        "categories": { "type": "array", "items": { "type": "string" }, "description": "Category tags" },
+        "downloadLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string" },
+              "provider": { "type": "string" }
+            }
+          }
+        },
+        "sceneBreakdown": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "description": { "type": "string", "description": "Detailed notes on scene pack" },
+        "downloadCount": { "type": "number", "description": "Total download clicks" },
+        "totalViews": { "type": "number", "description": "Page view counter" },
+        "featured": { "type": "boolean", "description": "Featured on home page" },
+        "dramaYear": { "type": "number", "description": "Year released" },
+        "actorTags": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "description": "ISO creation date" }
+      },
+      "required": ["title", "dramaName", "quality", "size"]
+    },
+    "comments": {
+      "title": "comments",
+      "description": "User reviews and comments for a scene pack",
+      "properties": {
+        "scenePackId": { "type": "string" },
+        "author": { "type": "string" },
+        "text": { "type": "string" },
+        "rating": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["scenePackId", "author", "text"]
+    },
+    "requests": {
+      "title": "requests",
+      "description": "User requested K-Drama scene packs",
+      "properties": {
+        "dramaName": { "type": "string" },
+        "notes": { "type": "string" },
+        "requestedBy": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    }
+  }
+}
